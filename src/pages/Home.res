@@ -1,0 +1,1 @@
+let default = () => <div>{`Hello from rescript`->React.string}</div>
