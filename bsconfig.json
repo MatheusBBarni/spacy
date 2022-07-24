@@ -5,7 +5,9 @@
     "react-jsx": 3
   },
   "bs-dependencies": [
-    "@rescript/react"
+    "@rescript/react",
+    "@rescriptbr/ancestor",
+    "rescript-js"
   ],
   "ppx-flags": [],
   "sources": [
@@ -22,5 +24,5 @@
     "error": "+8"
   },
   "suffix": ".bs.js",
-  "bsc-flags": ["-bs-g", "-bs-super-errors"]
+  "bsc-flags": ["-bs-g", "-bs-super-errors", "-open ReScriptJs"]
 }

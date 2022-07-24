@@ -9,7 +9,5 @@ type props = {
 let default = (props) => {
   let { component, pageProps } = props
 
-  <div style={ReactDOM.Style.make(~backgroundColor="red", ())}>
-    {React.createElement(component, pageProps)}
-  </div>
+  React.createElement(component, pageProps)
 }
