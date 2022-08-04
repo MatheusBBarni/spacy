@@ -6,6 +6,7 @@ module Colors = {
   let primary500 = "#2C2C2C"->#hex
   let primary600 = "#1D1D1D"->#hex
   let primary700 = "#171717"->#hex
+  let red = "#FF1E54"->#hex
 
   let toString = Ancestor.Css.Color.toString
 }
