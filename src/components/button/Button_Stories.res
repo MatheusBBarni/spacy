@@ -1,6 +1,9 @@
 type props = {
   label: Storybook.argTypes<string>,
-  size: Storybook.argTypes<Button.size>
+  size: Storybook.argTypes<Button.size>,
+  disabled: Storybook.argTypes<bool>,
+  block: Storybook.argTypes<bool>,
+  loading: Storybook.argTypes<bool>,
 }
 
 let default = Storybook.make(
@@ -13,11 +16,26 @@ let default = Storybook.make(
       ()
     ),
     size: Storybook.argType(
-      ~options=[#sm, #md],
+      ~options=[#lg, #md],
       ~control=Radio,
-      ~defaultValue=#sm,
+      ~defaultValue=#lg,
       ()
-    )
+    ),
+    disabled: Storybook.argType(
+      ~defaultValue=false,
+      ~control=Boolean,
+      ()
+    ),
+    block: Storybook.argType(
+      ~defaultValue=false,
+      ~control=Boolean,
+      ()
+    ),
+    loading: Storybook.argType(
+      ~defaultValue=false,
+      ~control=Boolean,
+      ()
+    ),
   },
   ()
 )

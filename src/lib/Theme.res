@@ -18,8 +18,8 @@ module ZIndex = {
 }
 
 module Constants = {
-  let fontFamily = "DM Sansm sans-serif"
+  let fontFamily = "DM Sans, sans-serif"
 }
 
-let spacing = Ancestor.Styles.spacing
-let radius = Ancestor.Styles.radius
+let spacing = AncestorSpacy.Styles.spacing
+let radius = AncestorSpacy.Styles.radius
