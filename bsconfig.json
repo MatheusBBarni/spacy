@@ -7,7 +7,8 @@
   "bs-dependencies": [
     "@rescript/react",
     "@rescriptbr/ancestor",
-    "rescript-js"
+    "rescript-js",
+    "rescript-next"
   ],
   "ppx-flags": [],
   "sources": [
