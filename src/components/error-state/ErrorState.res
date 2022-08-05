@@ -1,13 +1,13 @@
 open AncestorSpacy
 
 @react.component
-let make = (~title, ~description) => {
+let make = (~title, ~description, ~cta=?) => {
   <Stack
     direction=[xs(#horizontal)]
     justifyContent=[xs(#center)]
     alignItems=[xs(#center)]
     gap=[xs(#one(4.))]>
-    <Next.Image src="/images/empty-state.svg" width=132.0 height=124.0 layout=#fixed />
+    <Next.Image src="/images/error-state.svg" width=120.0 height=124.0 layout=#fixed />
     <Stack direction=[xs(#horizontal)] gap=[xs(#one(1.))] textAlign=[xs(#center)]>
       <Typography
         m=[xs(0.)]
@@ -30,5 +30,9 @@ let make = (~title, ~description) => {
         {description->React.string}
       </Typography>
     </Stack>
+    {switch cta {
+    | None => React.null
+    | Some((label, onClick)) => <Button size=#lg label onClick />
+    }}
   </Stack>
 }
