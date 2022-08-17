@@ -19,8 +19,8 @@ let make = (~name, ~size as baseSize: float=1.0) => {
     width=[xs(size)]
     height=[xs(size)]
     fontWeight=[xs(#700)]
-    color=[xs(Theme.Colors.primary100)]
-    bgColor=[xs(Theme.Colors.primary700)]
+    color=[xs(#primary100)]
+    bgColor=[xs(#primary700)]
     fontSize=[xs(fontSize)]
     className=roundedBorder>
     {firstLetter->React.string}

@@ -17,7 +17,7 @@ let make = (~size: size=#lg, ~name) => {
   <Stack alignItems=[xs(#center)] gap=[xs(#one(1.))]>
     <Avatar size=avatarSize name />
     <Typography
-      color=[xs(Theme.Colors.primary700)]
+      color=[xs(#primary700)]
       letterSpacing=[xs(-0.05->#em)]
       fontWeight=[xs(#700)]
       fontSize=[xs(fontSize)]>

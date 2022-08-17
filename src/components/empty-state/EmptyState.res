@@ -16,7 +16,7 @@ let make = (~title, ~description) => {
         fontWeight=[xs(#700)]
         letterSpacing=[xs(-0.03->#em)]
         lineHeight=[xs(3.2->#rem)]
-        color=[xs(Theme.Colors.primary700)]>
+        color=[xs(#primary700)]>
         {title->React.string}
       </Typography>
       <Typography
@@ -26,7 +26,7 @@ let make = (~title, ~description) => {
         fontWeight=[xs(#500)]
         letterSpacing=[xs(-0.03->#em)]
         lineHeight=[xs(2.4->#rem)]
-        color=[xs(Theme.Colors.primary200)]>
+        color=[xs(#primary200)]>
         {description->React.string}
       </Typography>
     </Stack>
