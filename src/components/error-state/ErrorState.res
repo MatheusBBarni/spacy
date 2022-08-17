@@ -2,13 +2,9 @@ open AncestorSpacy
 
 @react.component
 let make = (~title, ~description, ~cta=?) => {
-  <Stack
-    direction=[xs(#horizontal)]
-    justifyContent=[xs(#center)]
-    alignItems=[xs(#center)]
-    gap=[xs(#one(4.))]>
+  <Stack justifyContent=[xs(#center)] alignItems=[xs(#center)] gap=[xs(#one(4.))]>
     <Next.Image src="/images/error-state.svg" width=120.0 height=124.0 layout=#fixed />
-    <Stack direction=[xs(#horizontal)] gap=[xs(#one(1.))] textAlign=[xs(#center)]>
+    <Stack gap=[xs(#one(1.))] textAlign=[xs(#center)]>
       <Typography
         m=[xs(0.)]
         tag=#h1

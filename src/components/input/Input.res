@@ -40,7 +40,7 @@ module Styles = {
 
 @react.component
 let make = (~placeholder=?, ~onChange=?, ~type_=?, ~disabled=false, ~error: option<string>=?) => {
-  <Stack direction=[xs(#horizontal)] gap=[xs(1.0->#one)]>
+  <Stack gap=[xs(1.0->#one)]>
     <Base className={Styles.input(~error)} tag=#input ?placeholder ?onChange ?type_ disabled />
     {switch error {
     | None => React.null
