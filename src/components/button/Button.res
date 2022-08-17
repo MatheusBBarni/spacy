@@ -31,8 +31,8 @@ module Styles = {
       "letterSpacing": "-0.0055em",
       "border": 0,
       "borderRadius": radius(0.25),
-      "backgroundColor": Colors.make(#primary700),
-      "color": Colors.make(#primary100),
+      "backgroundColor": colors(#primary700),
+      "color": colors(#primary100),
       "fontFamily": Constants.fontFamily,
       "cursor": "pointer",
       "willChange": "background-color",
@@ -40,7 +40,7 @@ module Styles = {
       "outline": 0,
       "&:hover": {
         "transition": transition,
-        "backgroundColor": Colors.make(#primary500),
+        "backgroundColor": colors(#primary500),
       },
       "&:focus": {
         "transition": transition,

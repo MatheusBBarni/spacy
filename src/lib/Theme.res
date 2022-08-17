@@ -64,3 +64,6 @@ module Radius = {
 
 let spacing = Spacing.make
 let radius = Radius.make
+
+let colors = Colors.make
+let zIndex = ZIndex.make
