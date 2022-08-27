@@ -7,6 +7,7 @@
   "bs-dependencies": [
     "@rescript/react",
     "@rescriptbr/ancestor",
+    "@rescriptbr/radix-ui",
     "rescript-js",
     "rescript-next"
   ],
@@ -25,5 +26,9 @@
     "error": "+8"
   },
   "suffix": ".bs.js",
-  "bsc-flags": ["-bs-g", "-bs-super-errors", "-open ReScriptJs.Js"]
+  "bsc-flags": [
+    "-bs-g",
+    "-bs-super-errors",
+    "-open ReScriptJs.Js"
+  ]
 }

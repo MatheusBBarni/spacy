@@ -14,7 +14,7 @@ let make = (~size: size=#lg, ~name) => {
   | #md => 1.4->#rem
   }
 
-  <Stack alignItems=[xs(#center)] gap=[xs(#one(1.))]>
+  <Stack direction=[xs(#horizontal)] alignItems=[xs(#center)] gap=[xs(#one(1.))]>
     <Avatar size=avatarSize name />
     <Typography
       color=[xs(#primary700)]
