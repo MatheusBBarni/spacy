@@ -7,6 +7,7 @@ let make = () => {
     justifyContent=[xs(#"space-between")]
     tag=#header
     direction=[xs(#horizontal)]>
-    <Logo /> <Button label="Sign in" />
+    <Logo />
+    <Button size=#lg label="Sign in" />
   </Stack>
 }

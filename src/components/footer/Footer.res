@@ -8,6 +8,7 @@ let make = () => {
     width=[xs(100.0->#pct)]
     justifyContent=[xs(#"space-between")]
     direction=[xs(#horizontal)]
+    alignItems=[xs(#center)]
     borderTop=[(1->#px, #solid, #primary200)->xs]>
     <Typography
       tag=#p color=[xs(#primary200)] fontSize=[xs(18->#px)] fontWeight=[xs(#500)] m=[xs(0.0)]>

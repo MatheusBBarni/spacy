@@ -1,7 +1,7 @@
-import React from "react";
-import createEmotionServer from "@emotion/server/create-instance";
-import NextDocument, { Html, Main, Head, NextScript } from "next/document";
 import { cache } from "@emotion/css";
+import createEmotionServer from "@emotion/server/create-instance";
+import NextDocument, { Head, Html, Main, NextScript } from "next/document";
+import React from "react";
 
 class Document extends NextDocument {
   static async getInitialProps(ctx) {
@@ -26,7 +26,14 @@ class Document extends NextDocument {
   render() {
     return (
       <Html lang="pt-br">
-        <Head />
+        <Head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />
