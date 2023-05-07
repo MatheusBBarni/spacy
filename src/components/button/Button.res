@@ -54,16 +54,29 @@ module Styles = {
 }
 
 @react.component
-let make = (~label, ~size: size=#md, ~disabled=false, ~block=false, ~onClick=?, ~loading=false) => {
+let make = React.forwardRef((
+  ~label,
+  ~size: size=#md,
+  ~disabled=false,
+  ~block=false,
+  ~onClick=?,
+  ~loading=false,
+  ref,
+) => {
   let spinnerSize = switch size {
   | #lg => 2.0->#rem
   | #md => 1.6->#rem
   }
 
-  <Base className={Styles.button(~size, ~block)} tag=#button disabled ?onClick>
+  <Base
+    className={Styles.button(~size, ~block)}
+    tag=#button
+    disabled
+    ?onClick
+    innerRef=?{ref->Js.Nullable.toOption->Belt.Option.map(ReactDOM.Ref.domRef)}>
     {switch loading {
     | true => <Spinner size=spinnerSize color=#primary100 background=#primary100 />
     | false => label->React.string
     }}
   </Base>
-}
+})
