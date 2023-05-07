@@ -8,10 +8,14 @@
     "@rescript/react",
     "@rescriptbr/ancestor",
     "@rescriptbr/radix-ui",
+    "@rescriptbr/reform",
+    "@rescriptbr/reschema",
     "rescript-js",
     "rescript-next"
   ],
-  "ppx-flags": [],
+  "ppx-flags": [
+    "lenses-ppx/ppx"
+  ],
   "sources": [
     {
       "dir": "src",
