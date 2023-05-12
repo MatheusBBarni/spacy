@@ -39,9 +39,26 @@ module Styles = {
 }
 
 @react.component
-let make = (~placeholder=?, ~onChange=?, ~type_=?, ~disabled=false, ~error: option<string>=?) => {
+let make = (
+  ~autoFocus=?,
+  ~value=?,
+  ~placeholder=?,
+  ~onChange=?,
+  ~type_=?,
+  ~disabled=false,
+  ~error: option<string>=?,
+) => {
   <Stack gap=[xs(1.0->#one)]>
-    <Base className={Styles.input(~error)} tag=#input ?placeholder ?onChange ?type_ disabled />
+    <Base
+      className={Styles.input(~error)}
+      tag=#input
+      ?autoFocus
+      ?value
+      ?placeholder
+      ?onChange
+      ?type_
+      disabled
+    />
     {switch error {
     | None => React.null
     | Some(message) => <Base className=Styles.error tag=#span> {message->React.string} </Base>
