@@ -3,6 +3,18 @@ open AncestorSpacy
 
 module Hero = Home_Hero
 
+module Styles = {
+  open Emotion
+
+  let createAccount = css({
+    "button[aria-haspopup=dialog]": {
+      "outline": "none",
+      "border": "none",
+      "background": "none",
+    },
+  })
+}
+
 let default = () => {
   let fakeArticles = [1, 2, 3, 4, 5, 6]
   <Box p=[xs(4.)]>
@@ -11,8 +23,14 @@ let default = () => {
       <Box maxW=[xs(508->#px)] width=[xs(100.0->#pct)]>
         <Hero.Text />
       </Box>
-      <Box maxW=[xs(178->#px)] width=[xs(100.0->#pct)]>
-        <Button block=true label={"Create account"} />
+      <Box maxW=[xs(178->#px)] width=[xs(100.0->#pct)] className=Styles.createAccount>
+        <Modal.Root>
+          <Modal.Trigger>
+            <Button block=true label={"Create account"} />
+          </Modal.Trigger>
+          <Modal.Overlay />
+          <SignUpModal />
+        </Modal.Root>
       </Box>
     </Hero>
     <Stack gap=[xs(#one(8.0))] mt=[xs(14.0)] alignItems=[xs(#center)]>

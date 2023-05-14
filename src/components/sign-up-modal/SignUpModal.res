@@ -3,6 +3,7 @@ open Render
 
 module FormFields = %lenses(
   type state = {
+    username: string,
     email: string,
     password: string,
   }
@@ -13,7 +14,11 @@ module Form = ReForm.Make(FormFields)
 let formSchema = {
   open Form.Validation
 
-  schema([email(~error="Invalid email", Email), string(~min=8, Password)])
+  schema([
+    nonEmpty(~error="Required", Username),
+    email(~error="Invalid email", Email),
+    string(~min=8, Password),
+  ])
 }
 
 @react.component
@@ -24,7 +29,7 @@ let make = () => {
   }
 
   let form = Form.use(
-    ~initialState={email: "", password: ""},
+    ~initialState={username: "", email: "", password: ""},
     ~onSubmit=handleSubmit,
     ~validationStrategy=OnDemand,
     ~schema=formSchema,
@@ -48,12 +53,18 @@ let make = () => {
         color=[xs(#primary700)]
         fontWeight=[xs(#700)]
         letterSpacing=[xs(-0.02->#em)]>
-        {"Sign In"->s}
+        {"Sign Up"->s}
       </Typography>
       <Stack gap=[xs(#one(3.0))]>
         <Input
-          placeholder="Email"
+          placeholder="Username"
           autoFocus=true
+          onChange={handleChange(Username)}
+          value=form.values.username
+          error=?{form.getFieldError(Field(Username))}
+        />
+        <Input
+          placeholder="Email"
           onChange={handleChange(Email)}
           value=form.values.email
           error=?{form.getFieldError(Field(Email))}
@@ -65,7 +76,7 @@ let make = () => {
           value=form.values.password
           error=?{form.getFieldError(Field(Password))}
         />
-        <Button size=#lg label="Sign in" onClick=handleSubmitClick />
+        <Button size=#lg label="Sign Up" onClick=handleSubmitClick />
       </Stack>
     </Stack>
   </Modal.Content>
