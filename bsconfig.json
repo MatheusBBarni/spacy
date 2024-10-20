@@ -8,13 +8,16 @@
     "@rescript/react",
     "@rescriptbr/ancestor",
     "@rescriptbr/radix-ui",
+    "rescript-js",
+    "rescript-next",
     "@rescriptbr/reform",
     "@rescriptbr/reschema",
-    "rescript-js",
-    "rescript-next"
+    "rescript-relay",
+    "bs-fetch"
   ],
   "ppx-flags": [
-    "lenses-ppx/ppx"
+    "lenses-ppx/ppx",
+    "rescript-relay/ppx"
   ],
   "sources": [
     {
